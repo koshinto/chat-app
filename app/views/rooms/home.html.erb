@@ -1,0 +1,17 @@
+<div class="form">
+  <%= form_with model: Talk.new, local: true do |form| %>
+    <%= form.text_area :content %>
+    <%= form.submit "send talk" %>
+  <% end %>
+</div>
+
+<div class="timeline">
+  <ul>
+    <% @talks.each do |talk| %>
+    <li>
+      <%= talk.content %>
+      <%= link_to "削除", talks_path(id: talk.id), method: :delete %>
+    </li>
+    <% end %>
+  </ul>
+</div>
