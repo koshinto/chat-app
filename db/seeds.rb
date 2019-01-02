@@ -1,2 +1,1 @@
-Talk.create(content: "First Talk")
-Talk.create(content: "Second Talk")
+50.times { |n| Talk.create(content: "#{n + 1} Talk.") }
