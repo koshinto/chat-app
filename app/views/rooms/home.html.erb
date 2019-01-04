@@ -1,3 +1,13 @@
+<div class="sidebar">
+  <%= form_with model: Talk.new, local: true do |form| %>
+    <div class="form">
+      <!-- <i class="fas fa-pen"></i> -->
+      <%= form.text_area :content, class: 'content' %>
+      <%= button_tag "Send", class: 'send-button' %>
+    </div>
+  <% end %>
+</div>
+
 <div class="timeline">
   <ul class="talks">
     <% @talks.each do |talk| %>
@@ -9,12 +19,3 @@
   </ul>
 </div>
 
-<footer>
-  <%= form_with model: Talk.new, local: true do |form| %>
-    <div class="form">
-      <!-- <i class="fas fa-pen"></i> -->
-      <%= form.text_area :content, class: 'content' %>
-      <%= button_tag "Send", class: 'send-button' %>
-    </div>
-  <% end %>
-</footer>
