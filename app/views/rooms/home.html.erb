@@ -10,8 +10,8 @@
 
 <div class="timeline">
   <ul class="talks">
-    <% @talks.each do |talk| %>
-    <li class="talk">
+    <% @talks.each.with_index(1) do |talk, index| %>
+    <li class="talk talk-<%= index %>">
       <%= talk.content %>
       <%= link_to "delete", talks_path(id: talk.id), method: :delete %>
     </li>
