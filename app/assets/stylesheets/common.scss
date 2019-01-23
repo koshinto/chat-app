@@ -22,14 +22,15 @@ body {
   }
 }
 
+
 header {
   position: fixed;
   display: inline-block;
   width: 100%;
   background-color: rgba($color: #0099ff, $alpha: 0.9);
   #header-menu {
-    list-style: none;
     font-weight: bold;
+    list-style: none;
     margin: 5px 0;
     padding: 0;
     li {
@@ -40,7 +41,10 @@ header {
     }
     .header-top {
       display: inline;
-      .bars {
+      input[type="checkbox"] {
+        display: none;
+      }
+      .bar-icon {
         font-size: 1.4em;
         margin-left: 1em;
         margin-right: 1em;
@@ -51,17 +55,12 @@ header {
         margin: 0 auto;
       }
     }
-    .app-name a {
-      font-size: 1.2em;
-      color: #fff;
+    .menu-list {
+      margin-left: 1em;
       display: none;
-      text-align: center;
-    }
-    .menu-name a {
-      font-size: 1.2em;
-      color: #fff;
-      text-align: center;
-      display: none;
+      a {
+        color: #fff;
+      }
     }
   }
   .alert {
