@@ -17,7 +17,7 @@
         <li class="header-top" style="color: #fff">
           <label for="bar" class="bar-icon"><i class="fas fa-bars"></i></label>
           <input type="checkbox" id="bar">
-          <p class="room-name"><%= p "a" * 80 %></p>
+          <p class="room-name">{{ room }}</p>
         </li>
         <div class="menu-list">
           <li class="app-name"><%= link_to "ChatApp", root_path %></li>
@@ -33,5 +33,7 @@
     <article>
       <%= yield %>
     </article>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <%= javascript_pack_tag 'main_vue'%>
   </body>
 </html>
