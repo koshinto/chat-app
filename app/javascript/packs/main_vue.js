@@ -1,8 +1,14 @@
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue/dist/vue.esm.js'
 
-var name = new Vue({
-    el: '.header-top',
+new Vue({
+    el: '#header-menu',
     data: {
-        room: 'MyRoom',
-    }
-})
+        display: false,
+        room: "Lorem ipsum"
+    },  
+    methods: {
+        showMenuBar: function() {
+            this.display = !this.display
+        }
+    },
+});

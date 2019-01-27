@@ -15,11 +15,12 @@
     <header>
       <ul id="header-menu">
         <li class="header-top" style="color: #fff">
-          <label for="bar" class="bar-icon"><i class="fas fa-bars"></i></label>
-          <input type="checkbox" id="bar">
+          <button id="bar-btn">
+            <i class="fas fa-bars" v-on:click="showMenuBar"></i>
+          </button>
           <p class="room-name">{{ room }}</p>
         </li>
-        <div class="menu-list">
+        <div class="menu-list" v-show="display">
           <li class="app-name"><%= link_to "ChatApp", root_path %></li>
           <li class="menu"><%= link_to "menu", "#" %></li>
           <li class="menu"><%= link_to "menu", "#" %></li>
@@ -34,6 +35,6 @@
       <%= yield %>
     </article>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <%= javascript_pack_tag 'main_vue'%>
+    <%= javascript_pack_tag 'main_vue' %>
   </body>
 </html>
