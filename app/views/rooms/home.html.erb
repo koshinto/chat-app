@@ -1,7 +1,6 @@
 <div class="sidebar">
   <%= form_with model: Talk.new, local: true do |form| %>
     <div class="form">
-      <!-- <i class="fas fa-pen"></i> -->
       <%= form.text_area :content, class: 'content' %>
       <%= button_tag "Send", class: 'send-button' %>
     </div>
