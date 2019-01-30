@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title ChatApp
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"
+
+  body
+    header
+      ul id="header-menu"
+        li class="header-top" style="color: #fff"
+          button id="bar-btn"
+            i class="fas fa-bars" v-on:click="showMenuBar"
+          p class="room-name"
+            | {{ room }}
+        div class="menu-list" v-show="display"
+          li class="app-name" = link_to "ChatApp", root_path
+          li class="menu" = link_to "menu", "#"
+
+      - flash.each do |type, msg|
+        div class="alert alert-#{type}" = msg
+
+    article
+      = yield
+      
+    script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"
+    = javascript_pack_tag 'main_vue'

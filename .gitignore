@@ -32,6 +32,7 @@
 
 vendor/bundle
 .vscode
+.DS_Store
 .DS_Store/public/packs
 /public/packs/*
 /public/packs-test

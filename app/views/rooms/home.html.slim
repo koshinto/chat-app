@@ -1,0 +1,16 @@
+div class="sidebar"
+  = form_with model: Talk.new, local: true do |form|
+    div class="form"
+      = form.text_area :content, class: 'content'
+      = button_tag "Send", class: 'send-button'
+
+div class="timeline"
+  ul class="talks"
+    - @talks.each.with_index(1) do |talk, index|
+      li class="talk talk-#{index}"
+        p class="contributor"
+          | contributor
+        = talk.content
+        div class="talk-menu"
+          = link_to "reply", "#"
+          = link_to "delete", talks_path(id: talk.id), method: :delete
