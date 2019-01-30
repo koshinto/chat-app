@@ -12,8 +12,12 @@
   <ul class="talks">
     <% @talks.each.with_index(1) do |talk, index| %>
     <li class="talk talk-<%= index %>">
+      <p class="contributor">contributor</p>
       <%= talk.content %>
-      <%= link_to "delete", talks_path(id: talk.id), method: :delete %>
+      <div class="talk-menu">
+        <%= link_to "reply", "#" %>
+        <%= link_to "delete", talks_path(id: talk.id), method: :delete %>
+      </div>
     </li>
     <% end %>
   </ul>

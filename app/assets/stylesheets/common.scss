@@ -101,7 +101,7 @@ article {
     width: 40%;
     margin: 0;
     display: inline-block;
-    background-color: white;
+    background-color: #fff;
     .form {
       width: 80%;
       margin: 10px auto;
@@ -142,11 +142,10 @@ article {
   }
   .timeline {
     margin: 0;
-    height: 95%;
-    width: 60%;
+    height: 100%;
+    width: 100%;
     display: inline-block;
     .talks {
-      // width: 100%;
       margin: 20px;
       padding: 15px;
       background: #fff;
@@ -157,12 +156,26 @@ article {
       .talk {
         display: block;
         list-style-type: none;
-        padding: 5px;
+        padding: 10px 15px;
         border-bottom: 1px solid #ccc; // Imprement invalidation border-bottom of Last-Talk with JavaScript
         // padding: 20px 10px;
         // background: #ffffff;
         // border-radius: 5px;
         // box-shadow: 0 0 2px gray;
+        .contributor {
+          font-weight: bold;
+        }
+        .talk-menu {
+          text-align: right;
+          a {
+            padding: 2px 4px;
+            color: #0099ff;
+            &:hover {
+              color: #fff;
+              background: #0099ff;
+            }
+          }
+        }
       }
     }
   }
@@ -173,8 +186,10 @@ article {
   body {
     article {
       display: block;
+      height: 100%;
       .sidebar {
         width: 100%;
+        height: 20%;
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         .form {
           .content {
@@ -184,10 +199,12 @@ article {
       }
       .timeline {
         width: 100%;
-        height: 70%;
+        height: 80%;
         .talks {
           margin: 10px;
+          .contributor { font-size: 0.8em; }
           .talk {
+            padding: 5px 10px;
             margin-bottom: 10px;
           }
         }
